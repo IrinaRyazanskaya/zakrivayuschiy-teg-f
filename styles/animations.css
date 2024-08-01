@@ -21,3 +21,54 @@
     transform: translateX(4px);
   }
 }
+
+@keyframes scale-heart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparkle-fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.contour,
+.core,
+.main-body {
+  transition: fill .3s linear;
+}
+
+.core {
+  transition-delay: .03s;
+}
+
+.card__icon-button:hover .main-body, 
+.card__icon-button:active .main-body,
+.like-icon.is-liked .main-body {
+  transition-delay: .05s;
+}
+
+.like-icon.is-liked .contour {
+  transition-delay: .06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale-heart .3s ease-in .1s;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkle-fade .3s ease-in .3s;
+}
+
+.like-icon:not(.is-liked) .contour {
+  transition: fill .1s linear;
+}

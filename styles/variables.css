@@ -5,8 +5,7 @@
   --content-font-size: 18px;
   --normal-font-weight: 400;
   --bold-font-weight: 700;
-  --bg-color: #fff;
-  --text-color: #000;
-  --accent-color: rgba(0, 0, 0, .6);
-  --border: 2px solid var(--text-color);
+  --border: 2px solid var(--accent-color);
+  --heart-fill: #f00;
+  --heart-core: #fff;
 }
