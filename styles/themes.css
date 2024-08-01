@@ -6,8 +6,9 @@
 */
 :root.theme-light {
   --bg-color: #fff;
-  --text-color: #000;
-  --border: 2px solid var(--text-color);
+  --accent-color: #000;
+  --button-text-color: #fff;
+  --lable-stroke-color: #fff;
   --background-image: 
     repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), 
     repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -16,16 +17,45 @@
   --bold-font-weight: 700;
 }
 
+:root.theme-dark {
+  --bg-color: #000;
+  --accent-color: #00cc14;
+  --button-text-color: var(--accent-color);
+  --lable-stroke-color: #000;
+  --background-image: 
+    repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(to bottom, #000, #000 2px, transparent 2px, transparent 4px),
+    linear-gradient(#007f0c 0.01%, #004306);
+  --normal-font-weight: 465;
+  --bold-font-weight: 785;
+}
+
 @media (prefers-color-scheme: light) {
   :root.theme-auto {
     --bg-color: #fff;
-    --text-color: #000;
-    --border: 2px solid var(--text-color);
+    --accent-color: #000;
+    --button-text-color: #fff;
+    --lable-stroke-color: #fff;
     --background-image: 
       repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), 
       repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
       linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --normal-font-weight: 400;
     --bold-font-weight: 700;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto {
+    --bg-color: #000;
+    --accent-color: #00cc14;
+    --button-text-color: var(--accent-color);
+    --lable-stroke-color: #000;
+    --background-image: 
+      repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), 
+      repeating-linear-gradient(to bottom, #000, #000 2px, transparent 2px, transparent 4px),
+      linear-gradient(#007f0c 0.01%, #004306);
+    --normal-font-weight: 465;
+    --bold-font-weight: 785;
   }
 }
