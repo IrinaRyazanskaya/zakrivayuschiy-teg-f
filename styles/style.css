@@ -202,7 +202,8 @@
 
 .card__icon-button:focus,
 .card__like-button:focus,
-.footer__save-button:focus {
+.footer__save-button:focus,
+.save-dialog__button:focus {
   outline: none;
 }
 
@@ -250,7 +251,8 @@
 }
 
 .card__like-button,
-.footer__save-button {
+.footer__save-button,
+.save-dialog__button {
   position: relative;
   background: var(--bg-color);
   border: var(--border);
@@ -267,17 +269,20 @@
 }
 
 .card__like-button:focus-visible,
-.footer__save-button:focus-visible {
+.footer__save-button:focus-visible,
+.save-dialog__button:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
 }
 
 .card__like-button:hover,
-.footer__save-button:hover {
+.footer__save-button:hover,
+.save-dialog__button:hover {
   cursor: pointer;
 }
 
 .card__like-button::before,
-.footer__save-button::before {
+.footer__save-button::before,
+.save-dialog__button::before {
   position: absolute;
   content: ''; 
   width: 100%;
@@ -291,11 +296,13 @@
 }
 
 .card__like-button:hover::before,
-.footer__save-button:hover::before {
+.footer__save-button:hover::before,
+.save-dialog__button:hover::before {
   transform: scaleX(1);
 }
 
-.button__text {
+.button__text,
+.save-dialog__button-text {
   position: relative;
   mix-blend-mode: difference;
   color: var(--button-text-color);
@@ -324,4 +331,72 @@
   mix-blend-mode: difference;
   color: var(--button-text-color);
   z-index: 1;
+}
+
+.save-dialog {
+  inline-size: 357px;
+  block-size: 193px;
+  border: var(--border);
+  padding: 30px 30px 28px 30px;
+  background-color: var(--bg-color);
+}
+
+.save-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  gap: 30px;
+}
+
+.save-dialog__content-wrap {
+  display: flex;
+  gap: 20px;
+}
+
+.save-dialog__icon {
+  inline-size: 39px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  color: var(--accent-color);
+}
+
+.save-dialog__text {
+  text-transform: uppercase;
+  line-height: 150%;
+  flex-grow: 1;
+  color: var(--accent-color);
+}
+
+.save-dialog__button {
+  block-size: 38px;
+}
+
+.save-dialog::backdrop {
+  background-color: var(--backdrop-color);
+  mix-blend-mode: multiply;
+}
+
+@media (width <= 375px) {
+  .header {
+    block-size: 327px;
+  }
+
+  .footer__save-button {
+    flex-direction: column;
+    inline-size: 310px;
+    block-size: 84px;
+  }
+
+  .footer__icon {
+    inline-size: 28px;
+  }
+
+  .save-dialog {
+    inline-size: 341px;
+    block-size: 193px;
+    border: var(--border);
+    padding: 30px 40px 28px 40px;
+    background-color: var(--bg-color);
+  }
 }

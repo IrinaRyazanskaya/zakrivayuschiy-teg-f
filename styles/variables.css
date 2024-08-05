@@ -8,4 +8,5 @@
   --border: 2px solid var(--accent-color);
   --heart-fill: #f00;
   --heart-core: #fff;
+  --backdrop-color: rgba(0, 0, 0, .75);
 }
