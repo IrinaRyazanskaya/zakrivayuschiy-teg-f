@@ -143,7 +143,6 @@
   inset-inline-end: 25px;
   font-family: var(--accent-font);
   font-size: 14px;
-  text-transform: uppercase;
   mix-blend-mode: hard-light;
   text-shadow:
     -1px 0 var(--lable-stroke-color), 
@@ -164,9 +163,9 @@
 .card__image {
   display: block;
   width: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
   object-position: center;
-  border-block-end: var(--border);
 }
 
 .card__text-wrap {
@@ -174,6 +173,7 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
+  border-block-start: var(--border);
 }
 
 .card__text {
@@ -374,12 +374,47 @@
 
 .save-dialog::backdrop {
   background-color: var(--backdrop-color);
-  mix-blend-mode: multiply;
+}
+
+.image-1 {
+  filter: contrast(110%) hue-rotate(50deg);
+}
+
+.image-2 {
+  filter: grayscale(80%);
+}
+
+.image-3 {
+  filter: invert(100%);
+}
+
+.image-4 {
+  filter: hue-rotate(30deg);
+}
+
+.image-5 {
+  filter: brightness(0.7) contrast(60%);
+}
+
+.image-6 {
+  filter: sepia(60%) contrast(100%);
+}
+
+.image-7 {
+  filter: grayscale(40%) hue-rotate(90deg);
+}
+
+.image-8 {
+  filter: saturate(80%) brightness(0.7);
 }
 
 @media (width <= 375px) {
   .header {
     block-size: 327px;
+  }
+
+  .card__lable {
+    inset-inline-end: 13px;
   }
 
   .footer__save-button {
